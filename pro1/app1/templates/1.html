@@ -1,0 +1,16 @@
+{%for x in book%}
+<div><h1>
+    {{x.book_id}}
+    {{x.book_name}}</h1>
+{%if x.available_status == True%}
+    Available<br>
+    <a href="http://127.0.0.1:8000/index/booking/{{x.book_name}}">TAKE THIS</a>
+    {%else%}
+    Booked<br>
+    <a href="http://127.0.0.1:8000/index/returning/{{x.book_name}}">RETURN THIS</a>
+    {%endif%}
+
+</div>
+{%endfor%}
+
+<a href="http://127.0.0.1:8000/delete">DELETE MY ACCOUNT</a>
